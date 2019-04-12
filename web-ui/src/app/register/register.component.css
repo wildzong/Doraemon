@@ -1,0 +1,72 @@
+.id-header{
+    width: 100vw;
+    height: 7rem;
+    background: #fff;
+    margin: 0;
+}
+
+.id-dora{
+    position: absolute;
+    left: 11%;
+    font-size: 27px;
+    line-height: 61px;
+    letter-spacing: .009rem;
+    font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-style: normal;
+}
+
+.header{
+    background: -webkit-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,1)); /* Safari 5.1 - 6 */
+    background: -o-linear-gradient(right,rgba(0,0,0,0),rgba(0,0,0,1)); /* Opera 11.1 - 12*/
+    background: -moz-linear-gradient(right,rgba(0,0,0,0),rgba(0,0,0,1)); /* Firefox 3.6 - 15*/
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1)); /* 标准的语法 */
+    width: 100%;
+    margin: 0;
+    height: 12rem;
+    text-align: center;
+}
+
+.header-span{
+    color: white;
+    font-size: 40px;
+    line-height: 12rem;
+    font-weight: 600;
+}
+
+.chose-panel{
+    position: absolute;
+    line-height: 6rem;
+    right: 10rem;
+    font-size: 1.5rem;
+}
+
+.chose-three{
+    margin-left: 3rem;
+    cursor: pointer;
+}
+
+.input-login{
+    width: 40rem;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 1.6rem;
+    padding-left: 1rem;
+}
+
+.btn-login{
+    width: 40rem;
+    height: 5rem;
+    background-color: #0070c9;
+    border: 1px solid #07c;
+}
+
+.register-header{
+    font-size: 18px;
+}
+
+.header-reg{
+    height: 5rem;
+    line-height: 5rem;
+    text-align: center;
+    margin-top: 2rem;
+}

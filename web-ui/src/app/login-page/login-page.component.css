@@ -1,0 +1,94 @@
+.login-page{
+    width: 100%;
+    height: 100%;
+    min-height: 1rem;
+}
+
+.no-border{
+    border-bottom: 0;
+}
+
+.position-login{
+    position: absolute;
+    left: 11%;
+    top: 25%;
+}
+
+.border-vertical2{
+    height: 35rem;
+    width: 1px;
+    border: 1px solid gray;
+    position: absolute;
+    left: 50%;
+    top: 35%;
+}
+
+.title-form{
+    font-family: SF Pro SC,SF Pro Display,SF Pro Icons,AOS Icons,PingFang SC,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 40px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: 0;
+    padding-bottom: 36px;
+    padding-top: 34px;
+}
+
+.input-login{
+    width: 40rem;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 1.6rem;
+    padding-left: 1rem;
+}
+
+.btn-login{
+    width: 40rem;
+    height: 5rem;
+    background-color: #0070c9;
+    border: 1px solid #07c;
+}
+
+.login-p{
+    width: 40rem;
+    letter-spacing: 0;
+    font-size: 14px;
+    line-height: 1.42861;
+    font-weight: 400;
+    margin-bottom: 15px;
+    font-style: normal;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.login-link{
+    width: 40rem;
+    letter-spacing: 0;
+    font-size: 18px;
+    line-height: 1.42861;
+    font-weight: 400;
+    font-style: normal;
+    display: block;
+}
+
+.link-after-button{
+    cursor: pointer;
+    color: #0070c9;
+    padding-bottom: 2px;
+}
+
+#forgetEmail:hover{
+    text-decoration: underline;
+}
+
+#registerEmail:hover {
+    text-decoration: underline;
+}
+
+.doraemon-pos{
+    position: absolute;
+    left: 65%;
+    top: 37%;
+}

@@ -1,0 +1,85 @@
+<div>
+  <img src="../../assets/background2.jpg" class="chat-background blur">
+</div>
+
+<div class="chat-page">
+  <div class="side-nav">
+    <div class="profile-photo">
+      <div class="profile-photo-img">
+        <img class="head-profile" src="{{user.HeadProfile}}">
+        <span class="head-name"> {{user.Name}} </span>
+      </div>
+
+      <div class="search-bar-div">
+        <div class="search-bar">
+          <input type="text" class="input-xlarge input-search" placeholder="搜索">
+          <img src="../../assets/search.svg" class="icon-search">
+        </div>
+      </div>
+
+      <div class="head-profile-border"></div>
+    </div>
+    
+    <div class="switch-bar">
+      <div class="all-icon">
+          <div class="switch-history" (click)="changeHistory()">
+            <img *ngIf='!ifHistory' class="switch-icon-history" src="../../assets/LC_icon_chat_fill.svg">
+            <img *ngIf='ifHistory' class="switch-icon-history" src="../../assets/LC_icon_chat_fill2.svg">
+          </div>
+            
+          <div class="switch-border"></div>
+      
+          <div class="switch-friends" (click)="changeFriends()">
+            <img *ngIf='!ifFriends' class="switch-icon-friends" src="../../assets/list.svg">
+            <img *ngIf='ifFriends' class="switch-icon-friends" src="../../assets/list2.svg">
+          </div>
+      </div>
+    </div>
+    
+    <div class="history-chat" *ngIf='ifHistory'>
+      <div class="history-chat-div" *ngFor="let chat of user.HistoryChat">
+        <img class="history-profile" src="{{chat.HeadProfile}}">
+        <span class="history-name"> {{chat.Name}} </span>
+        <span class="history-time"> {{chat.LastChatTime}} </span>
+      </div>
+    </div>
+
+    <div class="history-chat" *ngIf='ifFriends'>
+      <div class="history-chat-div" *ngFor="let chat of user.Friends">
+        <img class="history-profile" src="{{chat.HeadProfile}}">
+        <span class="history-name"> {{chat.Name}} </span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="chat-panel">
+    <div class="chat" *ngIf="!ifChat">
+      <div class="chat-title"></div>
+      <div class="chat-border"></div>
+      <div class="none-chat">
+        <img style="margin-top: 20%;" src="../../assets/chatboxes.svg">
+        <div>
+          <span class="none-span">未选择聊天</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat" *ngIf="ifChat">
+      <div class="chat-title">
+        <span class="chat-title-name">dogalive</span>
+      </div>
+      <div class="chat-border"></div>
+
+      <div class="chat-panel-words">
+
+      </div>
+
+      <div class="chat-border"></div>
+
+      <div class="chat-panel-input">
+
+      </div>
+    </div>
+  </div>
+</div>
