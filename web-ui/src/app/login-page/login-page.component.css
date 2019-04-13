@@ -9,9 +9,11 @@
 }
 
 .position-login{
-    position: absolute;
+    position: relative;
     left: 11%;
     top: 25%;
+    width: 100%;
+    height: calc(100vh - 17rem);
 }
 
 .border-vertical2{
@@ -91,4 +93,8 @@
     position: absolute;
     left: 65%;
     top: 37%;
+}
+
+.form-horizontal{
+    margin-top: 3%;
 }

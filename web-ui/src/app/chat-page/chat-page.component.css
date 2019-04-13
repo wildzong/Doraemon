@@ -16,13 +16,18 @@
 
 .chat-page{
     width: 80%;
-    height: 88%;
-    position: absolute;
+    height: 96%;
+    position: relative;
     left: 10%;
     background: white;
     border-radius: 10px;
-    top: 6%;
+    top: 1%;
     display: flex;
+}
+
+.chat-page-all{
+    width: 100vw;
+    height: calc(100vh - 9rem);
 }
 
 .side-nav{

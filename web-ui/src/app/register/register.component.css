@@ -70,3 +70,8 @@
     text-align: center;
     margin-top: 2rem;
 }
+
+.register-page{
+    width: 100vw;
+    height: calc(100vh - 17rem);
+}
