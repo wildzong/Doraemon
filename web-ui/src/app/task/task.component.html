@@ -1,3 +1,128 @@
-<p>
-  task works!
-</p>
+<div>
+    <img src="../../assets/background3.jpg" class="task-background blur">
+  </div>
+  
+<div class="task-page-all">
+  <div class="task-page">
+    <div class="task-header">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle button-search" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              {{dropdown}}
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a (click)="changeSearch('all')" id="all">All</a></li>
+              <li><a (click)="changeSearch('todo')" id="todo">Todo</a></li>
+              <li><a (click)="changeSearch('doing')" id="doing">Doing</a></li>
+              <li><a (click)="changeSearch('closed')" id="closed">Closed</a></li>
+              <li><a (click)="changeSearch('deleted')" id="deleted">Deleted</a></li>
+            </ul>
+        </div>
+
+        <div class="search-bar">
+          <input class="search-input" placeholder="Search or filter something...">
+        </div>
+
+        <div class="search-button">
+          <button type="button" class="btn btn-default btn-search">
+            <img class="icon-search" src="../../assets/search2.svg">
+            Search
+          </button>
+          <button type="button" class="btn btn-success btn-add">
+            <img class="icon-search" src="../../assets/add.svg">
+            Add issue
+          </button>
+        </div>
+    </div>
+
+    <div class="task-board">
+      <div class="task-side-bar">
+        <div class="bar">
+          <div class="bar-header">
+            <span class="bar-header-span">Todo</span>
+
+            <div style="width: 40%;"></div>
+
+            <div class="bar-cards">
+              <img class="icon" src="../../assets/cards.svg">
+              <span>0</span>
+            </div>
+
+            <div class="bar-add">
+              <img class="icon" src="../../assets/add8a8a8a.svg">
+            </div>
+          </div>
+
+          <div class="bar-content">
+            <div class="bg-primary card-p">
+              <span>change the style</span>
+              <img class="icon-x" src="../../assets/x.svg">
+              <img class="icon-arrow" src="../../assets/Arrow Right Circle.svg">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="task-side-bar">
+        <div class="bar">
+          <div class="bar-header">
+              <span class="bar-header-span">Doing</span>
+
+              <div style="width: 40%;"></div>
+  
+              <div class="bar-cards-2">
+                <img class="icon" src="../../assets/cards.svg">
+                <span>0</span>
+              </div>
+  
+          </div>
+
+          <div class="bar-content">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="task-side-bar">
+        <div class="bar">
+          <div class="bar-header">
+              <span class="bar-header-span">Closed</span>
+
+              <div style="width: 40%;"></div>
+  
+              <div class="bar-cards-2">
+                <img class="icon" src="../../assets/cards.svg">
+                <span>0</span>
+              </div>
+  
+          </div>
+
+          <div class="bar-content">
+              
+          </div>
+        </div>
+      </div>
+
+      <div class="task-side-bar">
+        <div class="bar">
+          <div class="bar-header">
+              <span class="bar-header-span">Deleted</span>
+
+              <div style="width: 40%;"></div>
+  
+              <div class="bar-cards-2">
+                <img class="icon" src="../../assets/cards.svg">
+                <span>0</span>
+              </div>
+  
+          </div>
+
+          <div class="bar-content">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

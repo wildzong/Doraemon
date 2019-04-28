@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskComponent implements OnInit {
 
+  dropdown = 'All';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  changeSearch(id) {
+    console.log(id);
+    this.dropdown = document.getElementById(id).innerHTML;
   }
 
 }

@@ -13,7 +13,7 @@
 
 .id-header{
     width: 100vw;
-    height: 7rem;
+    height: 10vh;
     background: #fff;
     margin: 0;
 }
@@ -22,7 +22,7 @@
     position: absolute;
     left: 11%;
     font-size: 27px;
-    line-height: 61px;
+    line-height: 10vh;
     letter-spacing: .009rem;
     font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-style: normal;

@@ -12,7 +12,6 @@
     position: relative;
     left: 11%;
     top: 25%;
-    width: 100%;
     height: calc(100vh - 17rem);
 }
 
@@ -22,7 +21,7 @@
     border: 1px solid gray;
     position: absolute;
     left: 50%;
-    top: 35%;
+    top: 28%;
 }
 
 .title-form{
@@ -92,9 +91,10 @@
 .doraemon-pos{
     position: absolute;
     left: 65%;
-    top: 37%;
+    top: 31%;
 }
 
-.form-horizontal{
-    margin-top: 3%;
+.login-page-all{
+    width: 100vw;
+    height: 77vh;
 }
