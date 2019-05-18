@@ -45,7 +45,7 @@
 
             <div class="bar-cards">
               <img class="icon" src="../../assets/cards.svg">
-              <span>0</span>
+              <span>{{ todoLength }}</span>
             </div>
 
             <div class="bar-add">
@@ -54,10 +54,12 @@
           </div>
 
           <div class="bar-content">
-            <div class="bg-primary card-p">
-              <span>change the style</span>
-              <img class="icon-x" src="../../assets/x.svg">
-              <img class="icon-arrow" src="../../assets/Arrow Right Circle.svg">
+            <div class="bg-primary card-p" *ngFor="let todo of taskTodo" >
+              <span>{{ todo.Name }}</span>
+              <div class="icon-right">
+                <img class="icon-x distance cursor" src="../../assets/x.svg" (click)="TodoToDel(this.todo)" >
+                <img class="icon-arrow cursor" src="../../assets/Arrow Right Circle.svg" (click)="TodoToDoing(this.todo)" >
+              </div>
             </div>
 
           </div>
@@ -73,13 +75,19 @@
   
               <div class="bar-cards-2">
                 <img class="icon" src="../../assets/cards.svg">
-                <span>0</span>
+                <span>{{ doingLength }}</span>
               </div>
   
           </div>
 
           <div class="bar-content">
-
+            <div class="bg-primary card-p" *ngFor="let doing of taskDoing" >
+              <span>{{ doing.Name }}</span>
+              <div class="icon-right">
+                <img class="icon-x distance cursor" src="../../assets/x.svg" (click)="DoingToDel(this.doing)" >
+                <img class="icon-arrow cursor" src="../../assets/Arrow Right Circle.svg" (click)="DoingToDone(this.doing)" >
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -93,13 +101,19 @@
   
               <div class="bar-cards-2">
                 <img class="icon" src="../../assets/cards.svg">
-                <span>0</span>
+                <span>{{ doneLength }}</span>
               </div>
   
           </div>
 
           <div class="bar-content">
-              
+            <div class="bg-primary card-p" *ngFor="let done of taskDone" >
+              <span>{{ done.Name }}</span>
+              <div class="icon-right2">
+                <img class="icon-x distance cursor" src="../../assets/x.svg" (click)="DoneToDel(this.done)" >
+                
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -113,13 +127,19 @@
   
               <div class="bar-cards-2">
                 <img class="icon" src="../../assets/cards.svg">
-                <span>0</span>
+                <span>{{ deleteLength }}</span>
               </div>
   
           </div>
 
           <div class="bar-content">
-
+            <div class="bg-primary card-p" *ngFor="let delete of taskDelete" >
+              <span>{{ delete.Name }}</span>
+              <div class="icon-right2">
+                <img class="icon-x distance cursor" src="../../assets/x.svg" (click)="DelToNone(this.delete)" >
+                
+              </div>
+            </div>
           </div>
         </div>
       </div>

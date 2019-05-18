@@ -129,6 +129,7 @@
     width: 100%;
     height: 90%;
     background:#FCFCFC;
+    overflow-y: scroll;
 }
 
 .icon{
@@ -190,5 +191,25 @@
 }
 
 .icon-x{
-    
+    width: 2.5rem;
+}
+
+.distance{
+    margin-left: 24%;
+}
+
+.cursor{
+    cursor: pointer;
+}
+
+.icon-right{
+    display: flex;
+    position: relative;
+    left: 50%;
+}
+
+.icon-right2{
+    display: flex;
+    position: relative;
+    left: 64%;
 }
