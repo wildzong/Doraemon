@@ -8,7 +8,11 @@ import { Task } from '../data';
 })
 export class TaskComponent implements OnInit {
 
+  // dropdown controls the search switch
   dropdown = 'All';
+
+  // keyValue stores the search key words
+  keyValue = '';
 
   taskTodo: Task[] = [
     {Name: 'task 1', Content: 'this is test 1', State: '1'},
@@ -28,16 +32,22 @@ export class TaskComponent implements OnInit {
     {Name: 'task 9', Content: 'this is test 4', State: '4'}
   ];
 
+  // task-Display is the data that displayed in the web
+  taskTodoDisplay = this.taskTodo;
+  taskDoingDisplay = this.taskDoing;
+  taskDoneDisplay = this.taskDone;
+  taskDeleteDisplay = this.taskDelete;
+
   // these length is used to display the number
-  todoLength: number = this.taskTodo.length;
-  doingLength: number = this.taskDoing.length;
-  doneLength: number = this.taskDone.length;
-  deleteLength: number = this.taskDelete.length;
+  todoLength: number = this.taskTodoDisplay.length;
+  doingLength: number = this.taskDoingDisplay.length;
+  doneLength: number = this.taskDoneDisplay.length;
+  deleteLength: number = this.taskDeleteDisplay.length;
 
   // addTask is used to control the model
   addTask = false;
 
-  // TaskAdd is used to add task to taskTodo
+  // TaskAdd is used to add task to taskTodoDisplay
   TaskAdd: Task = {
     Name: '',
     Content: '',
@@ -50,13 +60,40 @@ export class TaskComponent implements OnInit {
 
   }
 
+  // tslint:disable-next-line:use-life-cycle-interface
   ngAfterContentChecked(): void {
-    //Called after every check of the component's or directive's content.
-    //Add 'implements AfterContentChecked' to the class.
-    this.todoLength = this.taskTodo.length;
-    this.doingLength = this.taskDoing.length;
-    this.doneLength = this.taskDone.length;
-    this.deleteLength = this.taskDelete.length;
+    // Called after every check of the component's or directive's content.
+    // Add 'implements AfterContentChecked' to the class.
+    if (this.taskTodoDisplay === null) {
+      this.todoLength = 0;
+    } else {
+      this.todoLength = this.taskTodoDisplay.length;
+    }
+
+    if (this.taskDoingDisplay === null) {
+      this.doingLength = 0;
+    } else {
+      this.doingLength = this.taskDoingDisplay.length;
+    }
+
+    if (this.taskDoneDisplay === null) {
+      this.doneLength = 0;
+    } else {
+      this.doneLength = this.taskDoneDisplay.length;
+    }
+
+    if (this.taskDeleteDisplay === null) {
+      this.deleteLength = 0;
+    } else {
+      this.deleteLength = this.taskDeleteDisplay.length;
+    }
+
+    if (this.keyValue === '') {
+      this.taskTodoDisplay = this.taskTodo;
+      this.taskDoingDisplay = this.taskDoing;
+      this.taskDoneDisplay = this.taskDone;
+      this.taskDeleteDisplay = this.taskDelete;
+    }
   }
 
   changeSearch(id) {
@@ -65,54 +102,54 @@ export class TaskComponent implements OnInit {
 
   TodoToDel(obj: any) {
     console.log(obj);
-    for (let i = 0; i < this.taskTodo.length; i++) {
-      if (this.taskTodo[i] === obj) {
-        this.taskTodo.splice(i, 1);
+    for (let i = 0; i < this.taskTodoDisplay.length; i++) {
+      if (this.taskTodoDisplay[i] === obj) {
+        this.taskTodoDisplay.splice(i, 1);
       }
     }
-    this.taskDelete.push(obj);
+    this.taskDeleteDisplay.push(obj);
   }
 
   TodoToDoing(obj: any) {
-    for (let i = 0; i < this.taskTodo.length; i++) {
-      if (this.taskTodo[i] === obj) {
-        this.taskTodo.splice(i, 1);
+    for (let i = 0; i < this.taskTodoDisplay.length; i++) {
+      if (this.taskTodoDisplay[i] === obj) {
+        this.taskTodoDisplay.splice(i, 1);
       }
     }
-    this.taskDoing.push(obj);
+    this.taskDoingDisplay.push(obj);
   }
 
   DoingToDel(obj: any) {
-    for (let i = 0; i < this.taskDoing.length; i++) {
-      if (this.taskDoing[i] === obj) {
-        this.taskDoing.splice(i, 1);
+    for (let i = 0; i < this.taskDoingDisplay.length; i++) {
+      if (this.taskDoingDisplay[i] === obj) {
+        this.taskDoingDisplay.splice(i, 1);
       }
     }
-    this.taskDelete.push(obj);
+    this.taskDeleteDisplay.push(obj);
   }
 
   DoingToDone(obj: any) {
-    for (let i = 0; i < this.taskDoing.length; i++) {
-      if (this.taskDoing[i] === obj) {
-        this.taskDoing.splice(i, 1);
+    for (let i = 0; i < this.taskDoingDisplay.length; i++) {
+      if (this.taskDoingDisplay[i] === obj) {
+        this.taskDoingDisplay.splice(i, 1);
       }
     }
-    this.taskDone.push(obj);
+    this.taskDoneDisplay.push(obj);
   }
 
   DoneToDel(obj: any) {
-    for (let i = 0; i < this.taskDone.length; i++) {
-      if (this.taskDone[i] === obj) {
-        this.taskDone.splice(i, 1);
+    for (let i = 0; i < this.taskDoneDisplay.length; i++) {
+      if (this.taskDoneDisplay[i] === obj) {
+        this.taskDoneDisplay.splice(i, 1);
       }
-      this.taskDelete.push(obj);
+      this.taskDeleteDisplay.push(obj);
     }
   }
 
   DelToNone(obj: any) {
-    for (let i = 0; i < this.taskDelete.length; i++) {
-      if (this.taskDelete[i] === obj) {
-        this.taskDelete.splice(i, 1);
+    for (let i = 0; i < this.taskDeleteDisplay.length; i++) {
+      if (this.taskDeleteDisplay[i] === obj) {
+        this.taskDeleteDisplay.splice(i, 1);
       }
     }
   }
@@ -127,7 +164,42 @@ export class TaskComponent implements OnInit {
 
   confirmTask() {
     console.log(this.TaskAdd);
-    this.taskTodo.push(this.TaskAdd);
+    this.taskTodoDisplay.push(this.TaskAdd);
     this.addTask = false;
+  }
+
+  searchTask() {
+    const key = this.keyValue;
+    console.log(key);
+    const that = this;
+    if (this.dropdown === 'Todo') {
+      this.taskTodoDisplay = this.search(key, that.taskTodo);
+    } else if (this.dropdown === 'Doing') {
+      this.taskDoingDisplay = this.search(key, that.taskDoing);
+    } else if (this.dropdown === 'Closed') {
+      this.taskDoneDisplay = this.search(key, that.taskDone);
+    } else if (this.dropdown === 'Deleted') {
+      this.taskDeleteDisplay = this.search(key, that.taskDelete);
+    } else if (this.dropdown === 'All') {
+      this.taskTodoDisplay = this.search(key, that.taskTodo);
+      this.taskDoingDisplay = this.search(key, that.taskDoing);
+      this.taskDoneDisplay = this.search(key, that.taskDone);
+      this.taskDeleteDisplay = this.search(key, that.taskDelete);
+    }
+  }
+
+  search(key: string, arr: Task[]) {
+    let arr2: Task[] = null;
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].Name.indexOf(key) >= 0) {
+        arr2 = arr2 || [];
+        arr2.push(arr[i]);
+      }
+    }
+
+    console.log(arr2);
+
+    return arr2;
   }
 }
