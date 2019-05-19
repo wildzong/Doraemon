@@ -11,6 +11,7 @@ import { RegisterAccountComponent } from './register-account/register-account.co
 import { QuestionComponent } from './question/question.component';
 import { ChatPageComponent } from './chat-page/chat-page.component';
 import { TaskComponent } from './task/task.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TaskComponent } from './task/task.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

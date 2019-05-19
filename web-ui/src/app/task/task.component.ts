@@ -28,10 +28,21 @@ export class TaskComponent implements OnInit {
     {Name: 'task 9', Content: 'this is test 4', State: '4'}
   ];
 
+  // these length is used to display the number
   todoLength: number = this.taskTodo.length;
   doingLength: number = this.taskDoing.length;
   doneLength: number = this.taskDone.length;
   deleteLength: number = this.taskDelete.length;
+
+  // addTask is used to control the model
+  addTask = false;
+
+  // TaskAdd is used to add task to taskTodo
+  TaskAdd: Task = {
+    Name: '',
+    Content: '',
+    State: '1',
+  };
 
   constructor() { }
 
@@ -106,4 +117,17 @@ export class TaskComponent implements OnInit {
     }
   }
 
+  openModel() {
+    this.addTask = true;
+  }
+
+  closeModel() {
+    this.addTask = false;
+  }
+
+  confirmTask() {
+    console.log(this.TaskAdd);
+    this.taskTodo.push(this.TaskAdd);
+    this.addTask = false;
+  }
 }

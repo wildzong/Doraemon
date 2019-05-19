@@ -28,7 +28,7 @@
             <img class="icon-search" src="../../assets/search2.svg">
             Search
           </button>
-          <button type="button" class="btn btn-success btn-add">
+          <button type="button" class="btn btn-success btn-add" (click)="openModel()" >
             <img class="icon-search" src="../../assets/add.svg">
             Add issue
           </button>
@@ -49,13 +49,15 @@
             </div>
 
             <div class="bar-add">
-              <img class="icon" src="../../assets/add8a8a8a.svg">
+              <img class="icon" src="../../assets/add8a8a8a.svg"  (click)="openModel()" >
             </div>
           </div>
 
           <div class="bar-content">
             <div class="bg-primary card-p" *ngFor="let todo of taskTodo" >
-              <span>{{ todo.Name }}</span>
+              <div class="card-wid">
+                  <span>{{ todo.Name }}</span>
+              </div>
               <div class="icon-right">
                 <img class="icon-x distance cursor" src="../../assets/x.svg" (click)="TodoToDel(this.todo)" >
                 <img class="icon-arrow cursor" src="../../assets/Arrow Right Circle.svg" (click)="TodoToDoing(this.todo)" >
@@ -82,7 +84,9 @@
 
           <div class="bar-content">
             <div class="bg-primary card-p" *ngFor="let doing of taskDoing" >
-              <span>{{ doing.Name }}</span>
+              <div class="card-wid">
+                <span>{{ doing.Name }}</span>
+              </div>
               <div class="icon-right">
                 <img class="icon-x distance cursor" src="../../assets/x.svg" (click)="DoingToDel(this.doing)" >
                 <img class="icon-arrow cursor" src="../../assets/Arrow Right Circle.svg" (click)="DoingToDone(this.doing)" >
@@ -108,7 +112,9 @@
 
           <div class="bar-content">
             <div class="bg-primary card-p" *ngFor="let done of taskDone" >
-              <span>{{ done.Name }}</span>
+              <div class="card-wid2">
+                <span>{{ done.Name }}</span>
+              </div>
               <div class="icon-right2">
                 <img class="icon-x distance cursor" src="../../assets/x.svg" (click)="DoneToDel(this.done)" >
                 
@@ -134,7 +140,9 @@
 
           <div class="bar-content">
             <div class="bg-primary card-p" *ngFor="let delete of taskDelete" >
-              <span>{{ delete.Name }}</span>
+              <div class="card-wid2">
+                <span>{{ delete.Name }}</span>
+              </div>
               <div class="icon-right2">
                 <img class="icon-x distance cursor" src="../../assets/x.svg" (click)="DelToNone(this.delete)" >
                 
@@ -145,4 +153,36 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="back-model" *ngIf="addTask" >
+</div>
+
+<div class="model-all" *ngIf="addTask" >
+  <h2 class="head-task">
+    Add a Task
+    <img class="head-task-icon" src="../../assets/X2.svg" (click)="closeModel()" >
+  </h2>
+
+  <div class="model-content">
+    <div class="model-task-name">
+      <div class="title-model">
+        <span>Title</span>
+      </div>
+      <input class="title-input" [(ngModel)]="TaskAdd.Name">
+    </div>
+
+    <div class="model-task-des">
+      <div class="title-model">
+        <span>Description</span>
+      </div>
+      <textarea class="model-text" [(ngModel)]="TaskAdd.Content"></textarea>
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-default btn-cancel" type="submit" (click)="closeModel()" >Cancel</button>
+      <button type="button" class="btn btn-success btn-confirm" (click)="confirmTask()" >Confirm</button>
+    </div>
+  </div>
+
 </div>
