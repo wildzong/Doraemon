@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../data';
+import { MessageSendComponent } from '../message-send/message-send.component';
+import { MessageReceiveComponent } from '../message-receive/message-receive.component';
 
 @Component({
   selector: 'app-chat-page',
