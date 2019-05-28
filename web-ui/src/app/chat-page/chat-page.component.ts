@@ -9,24 +9,28 @@ import { User } from '../data';
 export class ChatPageComponent implements OnInit {
 
   user: User = {
-    HeadProfile: '../../assets/1.jpg',
+    HeadProfile: '../../assets/4.jpg',
     Name: '阿汤',
     Friends: [
       {HeadProfile: '../../assets/2.jpg', Name: 'superpants', Friends: null, HistoryChat: null, LastChatTime: null},
-      {HeadProfile: '../../assets/3.jpg', Name: 'wildzong', Friends: null, HistoryChat: null, LastChatTime: null}
+      {HeadProfile: '../../assets/3.jpg', Name: 'wildzong', Friends: null, HistoryChat: null, LastChatTime: null},
+      {HeadProfile: '../../assets/1.jpg', Name: 'Marzzy', Friends: null, HistoryChat: null, LastChatTime: null}
     ],
     HistoryChat: [
-      {HeadProfile: '../../assets/4.jpg', Name: 'bilibili', Friends: null, HistoryChat: null, LastChatTime: '21:54'}
+      {HeadProfile: '../../assets/3.jpg', Name: 'wildzong', Friends: null, HistoryChat: null, LastChatTime: '21:54'}
     ],
     LastChatTime: null
-  }
+  };
+
+  // userChat is used to control the user you talk to.
+  userChat: User = null;
 
   // ifHistory and ifFriends used to switch the bar
-  ifHistory: boolean = true;
-  ifFriends: boolean = false;
+  ifHistory = true;
+  ifFriends = false;
 
   // ifChat controls the chat panel
-  ifChat: boolean = true;
+  ifChat = false;
 
   constructor() { }
 
@@ -34,7 +38,6 @@ export class ChatPageComponent implements OnInit {
   }
 
   changeHistory() {
-    console.log("test");
     if (this.ifHistory !== true) {
       this.ifHistory = true;
       this.ifFriends = false;
@@ -49,5 +52,9 @@ export class ChatPageComponent implements OnInit {
     }
   }
 
+  openChat(user: User) {
+    this.ifChat = true;
+    this.userChat = user;
+  }
+
 }
-  

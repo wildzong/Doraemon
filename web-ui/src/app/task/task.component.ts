@@ -23,13 +23,13 @@ export class TaskComponent implements OnInit {
     {Name: 'task 4', Content: 'this is test 4', State: '2'}
   ];
   taskDone: Task[] = [
-    {Name: 'task 5', Content: 'this is test 2', State: '3'},
-    {Name: 'task 6', Content: 'this is test 3', State: '3'},
+    {Name: 'task 5', Content: 'this is test 5', State: '3'},
+    {Name: 'task 6', Content: 'this is test 6', State: '3'},
   ];
   taskDelete: Task[] = [
-    {Name: 'task 7', Content: 'this is test 2', State: '4'},
-    {Name: 'task 8', Content: 'this is test 3', State: '4'},
-    {Name: 'task 9', Content: 'this is test 4', State: '4'}
+    {Name: 'task 7', Content: 'this is test 7', State: '4'},
+    {Name: 'task 8', Content: 'this is test 8', State: '4'},
+    {Name: 'task 9', Content: 'this is test 9', State: '4'}
   ];
 
   // task-Display is the data that displayed in the web

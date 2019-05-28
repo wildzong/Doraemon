@@ -54,7 +54,7 @@
           </div>
 
           <div class="bar-content">
-            <div class="bg-primary card-p" *ngFor="let todo of taskTodoDisplay" >
+            <div class="bg-primary card-p" *ngFor="let todo of taskTodoDisplay" title="{{todo.Content}}" >
               <div class="card-wid">
                   <span>{{ todo.Name }}</span>
               </div>
@@ -83,7 +83,7 @@
           </div>
 
           <div class="bar-content">
-            <div class="bg-primary card-p" *ngFor="let doing of taskDoingDisplay" >
+            <div class="bg-primary card-p" *ngFor="let doing of taskDoingDisplay" title="{{doing.Content}}" >
               <div class="card-wid">
                 <span>{{ doing.Name }}</span>
               </div>
@@ -111,7 +111,7 @@
           </div>
 
           <div class="bar-content">
-            <div class="bg-primary card-p" *ngFor="let done of taskDoneDisplay" >
+            <div class="bg-primary card-p" *ngFor="let done of taskDoneDisplay" title="{{done.Content}}" >
               <div class="card-wid2">
                 <span>{{ done.Name }}</span>
               </div>
@@ -139,7 +139,7 @@
           </div>
 
           <div class="bar-content">
-            <div class="bg-primary card-p" *ngFor="let delete of taskDeleteDisplay" >
+            <div class="bg-primary card-p" *ngFor="let delete of taskDeleteDisplay" title="{{delete.Content}}" >
               <div class="card-wid2">
                 <span>{{ delete.Name }}</span>
               </div>
