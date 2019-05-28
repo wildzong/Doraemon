@@ -12,6 +12,8 @@ import { QuestionComponent } from './question/question.component';
 import { ChatPageComponent } from './chat-page/chat-page.component';
 import { TaskComponent } from './task/task.component';
 import { FormsModule } from '@angular/forms';
+import { MessageSendComponent } from './message-send/message-send.component';
+import { MessageReceiveComponent } from './message-receive/message-receive.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     RegisterAccountComponent,
     QuestionComponent,
     ChatPageComponent,
-    TaskComponent
+    TaskComponent,
+    MessageSendComponent,
+    MessageReceiveComponent
   ],
   imports: [
     BrowserModule,
