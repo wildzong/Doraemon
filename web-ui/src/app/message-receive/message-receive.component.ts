@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Message } from '../data';
 
 @Component({
   selector: 'app-message-receive',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./message-receive.component.css']
 })
 export class MessageReceiveComponent implements OnInit {
+  @Input() receive: Message;
 
   constructor() { }
 

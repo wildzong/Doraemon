@@ -72,15 +72,16 @@
         </div>
         <div class="chat-border"></div>
   
-        <div class="chat-panel-words">
+        <div class="chat-panel-words" #alertContainer id="MsgPanel">
           <div class="history-message-button">
             <img src="../../assets/time.svg" class="history-icon">
             <span>点击查看历史消息</span>
           </div>
 
-          <app-message-send></app-message-send>
-
-          <app-message-receive></app-message-receive>
+          <div *ngFor="let value of msgArray" style="margin-top: 1rem;" >
+            <app-message-send [send]='value' *ngIf="value.Type" ></app-message-send>
+            <app-message-receive [receive]='value' *ngIf="!value.Type" ></app-message-receive>
+          </div>
 
         </div>
   
@@ -88,11 +89,11 @@
   
         <div class="chat-panel-input">
           <div class="chat-panel-input-words">
-            <textarea class="textarea" rows="3"></textarea>
+            <textarea class="textarea" rows="3" [(ngModel)]="message"></textarea>
           </div>
 
           <div class="chat-panel-input-button">
-            <button type="button" class="btn btn-default btn-send">
+            <button type="button" class="btn btn-default btn-send" (click)="sendMsg()" >
               <img class="chat-input-icon" src="../../assets/send.svg">
               send
             </button>

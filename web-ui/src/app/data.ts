@@ -11,3 +11,10 @@ export class Task {
     Content: string;
     State: string;
 }
+
+export class Message {
+    UserChat: User;
+    Text: string;
+    // type true/false uesed as sender/receiver
+    Type: boolean;
+}

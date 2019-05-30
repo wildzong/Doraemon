@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from '../data';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { User, Message } from '../data';
 import { MessageSendComponent } from '../message-send/message-send.component';
 import { MessageReceiveComponent } from '../message-receive/message-receive.component';
 
@@ -8,6 +8,7 @@ import { MessageReceiveComponent } from '../message-receive/message-receive.comp
   templateUrl: './chat-page.component.html',
   styleUrls: ['./chat-page.component.css']
 })
+
 export class ChatPageComponent implements OnInit {
 
   user: User = {
@@ -25,7 +26,13 @@ export class ChatPageComponent implements OnInit {
   };
 
   // userChat is used to control the user you talk to.
-  userChat: User = null;
+  userChat: User = {
+    HeadProfile: '',
+    Name: '',
+    Friends: null,
+    HistoryChat: null,
+    LastChatTime: null
+  };
 
   // ifHistory and ifFriends used to switch the bar
   ifHistory = true;
@@ -33,6 +40,17 @@ export class ChatPageComponent implements OnInit {
 
   // ifChat controls the chat panel
   ifChat = false;
+
+  // msgArray used to store msg
+  msgArray: Message[] = [
+    {UserChat: this.user, Text: 'hello', Type: true}
+  ];
+
+  // msgSend used to send msg
+  msgSend: Message = null;
+
+  // message is used to receive the msg you send
+  message = '';
 
   constructor() { }
 
@@ -59,4 +77,19 @@ export class ChatPageComponent implements OnInit {
     this.userChat = user;
   }
 
+  // sendMsg is used to send msg
+  sendMsg() {
+    if (this.message !== '') {
+      console.log(this.userChat);
+      this.msgSend = {
+        UserChat: this.user,
+        Text: this.message,
+        Type: true,
+      };
+      this.message = '';
+      this.msgArray.push(this.msgSend);
+    } else {
+
+    }
+  }
 }
