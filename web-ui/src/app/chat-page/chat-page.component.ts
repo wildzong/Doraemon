@@ -25,6 +25,9 @@ export class ChatPageComponent implements OnInit {
     LastChatTime: null
   };
 
+  // showHis control the history button
+  showHis = true;
+
   // userChat is used to control the user you talk to.
   userChat: User = {
     HeadProfile: '',
@@ -42,9 +45,7 @@ export class ChatPageComponent implements OnInit {
   ifChat = false;
 
   // msgArray used to store msg
-  msgArray: Message[] = [
-    {UserChat: this.user, Text: 'hello', Type: true}
-  ];
+  msgArray: Message[] = [];
 
   // msgSend used to send msg
   msgSend: Message = null;
@@ -91,5 +92,27 @@ export class ChatPageComponent implements OnInit {
     } else {
 
     }
+  }
+
+  showHistory() {
+    this.showHis = false;
+    this.msgSend = {
+      UserChat: this.user,
+      Text: 'see you!',
+      Type: true,
+    };
+    this.msgArray.unshift(this.msgSend);
+    this.msgSend = {
+      UserChat: this.userChat,
+      Text: 'nice to meet you!',
+      Type: false,
+    };
+    this.msgArray.unshift(this.msgSend);
+    this.msgSend = {
+      UserChat: this.user,
+      Text: 'hello',
+      Type: true,
+    };
+    this.msgArray.unshift(this.msgSend);
   }
 }

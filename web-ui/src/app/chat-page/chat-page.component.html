@@ -73,7 +73,7 @@
         <div class="chat-border"></div>
   
         <div class="chat-panel-words" #alertContainer id="MsgPanel">
-          <div class="history-message-button">
+          <div class="history-message-button" (click)="showHistory()" *ngIf="showHis" >
             <img src="../../assets/time.svg" class="history-icon">
             <span>点击查看历史消息</span>
           </div>
@@ -103,3 +103,9 @@
     </div>
   </div>
 </div>
+
+<!--<p class="bg-success alert-page">Log In Success!</p>
+<p class="bg-danger alert-page">
+  Send Msg Fail!
+  <br>Msg Cannot be Null!
+</p>-->
