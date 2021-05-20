@@ -1,4 +1,4 @@
-package com.doraemon.lottery;
+package com.doraemon.lottery.base;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.junit.jupiter.api.Test;
