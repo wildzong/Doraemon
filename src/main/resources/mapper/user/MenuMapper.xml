@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.doraemon.lottery.login.dao.MenuDao">
+
+    <resultMap id="menu_entityResultMap" type="com.doraemon.lottery.login.entity.Menu">
+        <id column="id" property="id" />
+        <result column="menu_name" property="menuName" />
+        <result column="menu_url" property="menuUrl" />
+    </resultMap>
+
+    <!--获取所有的menuUrl-->
+    <select id="getRoleMenuByRoles" resultMap="menu_entityResultMap">
+        select * from t_menu
+        where id in
+        (select menu_id from t_role_menus where role_id in #{roleIds})
+    </select>
+
+</mapper>

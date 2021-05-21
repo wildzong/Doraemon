@@ -1,4 +1,4 @@
-package com.doraemon.lottery.utils;
+package com.doraemon.lottery.base.log;
 
 import com.doraemon.lottery.common.LogEnum;
 import org.slf4j.Logger;

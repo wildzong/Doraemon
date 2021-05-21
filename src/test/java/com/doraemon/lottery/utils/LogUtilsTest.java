@@ -1,5 +1,6 @@
 package com.doraemon.lottery.utils;
 
+import com.doraemon.lottery.base.log.LogUtils;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.springframework.boot.test.context.SpringBootTest;

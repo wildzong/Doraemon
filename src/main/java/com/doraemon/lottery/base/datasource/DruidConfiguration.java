@@ -1,4 +1,4 @@
-package com.doraemon.lottery.base;
+package com.doraemon.lottery.base.datasource;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
