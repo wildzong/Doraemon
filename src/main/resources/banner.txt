@@ -1,0 +1,31 @@
+${AnsiColor.BRIGHT_BLUE}
+                                ' ...........
+                      ' '{*rnrxxxxxjxnfrxxxxxxjrna&.`.
+                  ^"onxrxxxxnn/..      .|jxxxxxxxxxxxxxxa'
+              `.Mtrxxxxxxju1  .         .*rxrrrnxnxrrxxxxxrn%. .
+           ' )xxjJMl'. ..M.            ..#*..     .'.zxrxxxxxxx#...
+           Bn#...       '.     M.   .   * . .        .*rxxxxxxxxxfM
+        ."/    /:'       # ^    .    vx .o`WW'       .bnxxxxxxxxxxxn*'
+       :o#&L^     M'"       .kkbkkbq%.` WM&&^        'Orxxxxxxxxxxxrjz..
+     .       .&     .W.    .hbkbk'.mb&o.            'cxrxxxxxxxxxxxxxxn'
+   I(^..`.         *n       :hbkkkkw#..M'        .x' ..'#vxxxxxxxxxxxxrC'.               '^..`'^
+    o      ....;#&b          &`.....      .  <.           .#nxxxxxxxxxxr#              .jdkbkkkbb".
+     .                    'M            .......'........... `#rxxxxxxxxxC.            'ibkkkkkkkkb..
+     W'                   a                                  .&nxxxxxxxxUrxxxxrxx\8I''..~w#bkkkbk...
+     ?`#                                  'M&;   .            .*xxxxxxrxWrrxxxxxxxxrxxjM``.......
+      &   r .         .+              M.          ...0&".      "vxxxxxxcunrxxxxxxxxxxxxxxrM.
+      'u     O`       '.                  a'          , B;      xxxxxxroxxxxxxxxxxxxxxxxxrxr#.
+   `j"  &.     ;'a^.  '                       :k,' `'*.      ..Mxxxxxx&xxxxxxxxxxxxxxxxxxxxxx0`
+   M.   .`           `/M<'`'               . '.WU..c.        .'rxxxxuMnxxxxxxxxxxxxxxxxxxxxxxrM
+   z`      '(;                                               >nxxxxM%nxxxxxxxxxxxxxxxxxxxxxxxxx&.   .`+&`.
+     M"       h.                                          `^orxxnMbcxxxxxxxxxxxxxxxxxxxxxxxxxxxfxvm.       o..
+   .'vxxof.    ":#.                       ^?*Y.'`o#.`    'Mfnf*h&xjxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxrr8          "'
+   .#rxxrxxxxrxxxr*xYw                 I{'           .^"hL&urxnjxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx             &
+   .oxxxxxxxxxxxxxxxxr/dkaM'        . ^              .'jxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxn              ^W.
+   .'oxxxxxxxxxxxxxxxxxxxf&!llIIl;n8M8.              '*rxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxM               .j
+      . ^dYntrxxnjnnQa#''M:>Uox!IlII&xb'          '.#uxrxxxxxxxxuxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxrb`.               ...
+                .        'I;<M#<lIIMxxxxrW*^ :WWnfrxxxxxxxxxxf#^......)#0nxxxxxxxxxxxxxxxxxxxr&L.                 'p^
+                          . M>:Iia.Bxxxxxxxxxxxxxxxxxxxxxnz#. ^."{XCQu} .  ' .....  .. .`..'         .'  '.   '
+                                 ..^hrxxxxxxxxxxxxxxxjX*`.
+                                    .. ."W#0vxu0o&'... .
+
