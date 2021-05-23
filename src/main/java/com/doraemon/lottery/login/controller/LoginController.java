@@ -1,20 +1,27 @@
 package com.doraemon.lottery.login.controller;
 
+import com.doraemon.lottery.login.entity.User;
+import com.doraemon.lottery.login.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class LoginController {
-    @RequestMapping("/login")
-    public String showLogin() {
-        return "login.html";
+    @Autowired
+    private UserService userService;
+
+    @GetMapping("/user")
+    @ResponseBody
+    public User showUser() {
+        return userService.getUserInfo("wildzong");
     }
 
-    @GetMapping("/home")
-    @ResponseBody
-    public String home() {
-        return "欢迎来到主页 ~";
+    @PostMapping("/addUser")
+    public int addUser(@RequestBody User user) {
+        return userService.addUser(user);
     }
 }

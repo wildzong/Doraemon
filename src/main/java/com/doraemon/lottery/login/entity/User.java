@@ -3,7 +3,7 @@ package com.doraemon.lottery.login.entity;
 import lombok.Data;
 
 @Data
-public class UserEntity {
+public class User {
 
     // 用户id
     private Long id;
