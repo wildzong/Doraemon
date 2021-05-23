@@ -6,9 +6,11 @@
     <resultMap id="user_entityResultMap" type="com.doraemon.lottery.login.entity.UserEntity">
         <id column="id" property="id" />
         <result column="user_name" property="userName" />
+        <result column="password" property="password" />
+        <result column="role" property="role" />
     </resultMap>
 
     <select id="getUserByUsername" resultMap="user_entityResultMap">
-        select id, user_name from t_user where user_name = #{userName}
+        select * from t_user where user_name = #{userName}
     </select>
 </mapper>

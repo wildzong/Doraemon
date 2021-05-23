@@ -43,3 +43,7 @@ spring:
 # log4j2 相关配置文件
 logging:
   config: classpath:log4j2.yml
+
+# mybatis 相关配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
