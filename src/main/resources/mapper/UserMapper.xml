@@ -10,12 +10,20 @@
         <result column="role" property="role" />
     </resultMap>
 
+    <!--根据用户名获取用户信息-->
     <select id="getUserByUsername" resultMap="user_entityResultMap">
         select * from t_user where user_name = #{userName}
     </select>
 
+    <!--添加用户-->
     <insert id="addUser" parameterType="com.doraemon.lottery.login.entity.User">
         insert into t_user(user_name, password, role)
         values (#{userName}, #{password}, #{role})
     </insert>
+
+    <!--更新密码-->
+    <update id="updatePwd">
+        update t_user set password = #{password}
+        where user_name = #{userName}
+    </update>
 </mapper>

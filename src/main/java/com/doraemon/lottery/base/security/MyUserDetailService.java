@@ -43,8 +43,7 @@ public class MyUserDetailService implements UserDetailsService {
 
         return new org.springframework.security.core.userdetails.User(
                 userInfo.getUserName(),
-                // 因为数据库是明文，所以这里需加密密码
-                passwordEncoder.encode(userInfo.getPassword()),
+                userInfo.getPassword(),
                 authorities
         );
     }

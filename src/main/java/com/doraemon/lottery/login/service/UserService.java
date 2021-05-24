@@ -1,30 +1,28 @@
 package com.doraemon.lottery.login.service;
 
-import com.doraemon.lottery.login.dao.UserDao;
 import com.doraemon.lottery.login.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-@Service
-public class UserService {
-    @Autowired
-    private UserDao userDao;
+public interface UserService {
 
     /**
      * 根据用户名获取用户信息
      * @param username
      * @return
      */
-    public User getUserInfo(String username){
-        return userDao.getUserByUsername(username);
-    }
+    User getUserInfo(String username);
 
     /**
      * 添加用户
      * @param user
      * @return
      */
-    public int addUser(User user){
-        return userDao.addUser(user);
-    }
+    int addUser(User user);
+
+    /**
+     * 更新密码
+     * @param oldPwd
+     * @param newPwd
+     * @return
+     */
+    int updatePwd(String oldPwd, String newPwd);
 }

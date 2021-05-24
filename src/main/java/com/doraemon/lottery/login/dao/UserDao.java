@@ -21,4 +21,13 @@ public interface UserDao {
      * @return
      */
     int addUser(User user);
+
+    /**
+     * 更新密码
+     * @param password
+     * @param userName
+     * @return
+     */
+    int updatePwd(@Param("password") String password, @Param("userName") String userName);
+
 }
