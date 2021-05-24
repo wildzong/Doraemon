@@ -7,8 +7,25 @@
         <id column="id" property="id" />
         <result column="user_name" property="userName" />
         <result column="password" property="password" />
-        <result column="role" property="role" />
     </resultMap>
+
+    <resultMap id="userRoleMap" type="com.doraemon.lottery.login.entity.dto.UserDTO">
+        <id column="id" property="id" />
+        <result column="user_name" property="userName" />
+        <result column="password" property="password" />
+        <collection property="roles" ofType="com.doraemon.lottery.login.entity.Role">
+            <id column="rid" property="id" />
+            <result column="role_name" property="roleName" />
+        </collection>
+    </resultMap>
+
+    <!--查询用户信息及角色信息-->
+    <select id="selectUserByUsername" resultMap="userRoleMap" >
+        select u.id, u.user_name, u.password, r.id as rid, r.role_name
+        from t_user u left join t_user_roles ur on u.id = ur.user_id
+            left join t_role r on ur.role_id = r.id
+        where u.user_name= #{userName}
+    </select>
 
     <!--根据用户名获取用户信息-->
     <select id="getUserByUsername" resultMap="user_entityResultMap">

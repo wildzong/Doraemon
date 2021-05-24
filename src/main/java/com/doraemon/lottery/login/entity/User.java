@@ -13,6 +13,4 @@ public class User {
     private String password;
     // token
     private String token;
-    // role
-    private String role;
 }

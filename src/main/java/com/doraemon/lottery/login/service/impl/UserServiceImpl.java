@@ -2,6 +2,7 @@ package com.doraemon.lottery.login.service.impl;
 
 import com.doraemon.lottery.login.dao.UserDao;
 import com.doraemon.lottery.login.entity.User;
+import com.doraemon.lottery.login.entity.dto.UserDTO;
 import com.doraemon.lottery.login.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,6 +17,17 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    /**
+     * 查询用户信息及角色信息
+     *
+     * @param userName
+     * @return
+     */
+    @Override
+    public UserDTO selectUserByUsername(String userName) {
+        return userDao.selectUserByUsername(userName);
+    }
 
     /**
      * 根据用户名获取用户信息

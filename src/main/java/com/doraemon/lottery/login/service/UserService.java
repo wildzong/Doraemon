@@ -1,8 +1,16 @@
 package com.doraemon.lottery.login.service;
 
 import com.doraemon.lottery.login.entity.User;
+import com.doraemon.lottery.login.entity.dto.UserDTO;
 
 public interface UserService {
+
+    /**
+     * 查询用户信息及角色信息
+     * @param userName
+     * @return
+     */
+    UserDTO selectUserByUsername(String userName);
 
     /**
      * 根据用户名获取用户信息

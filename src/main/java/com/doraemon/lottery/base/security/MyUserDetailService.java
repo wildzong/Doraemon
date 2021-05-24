@@ -1,6 +1,7 @@
 package com.doraemon.lottery.base.security;
 
-import com.doraemon.lottery.login.entity.User;
+import com.doraemon.lottery.login.entity.Role;
+import com.doraemon.lottery.login.entity.dto.UserDTO;
 import com.doraemon.lottery.login.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Component
 public class MyUserDetailService implements UserDetailsService {
@@ -27,24 +29,21 @@ public class MyUserDetailService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // 通过用户名从数据库获取用户信息
-        User userInfo = userService.getUserInfo(username);
-        if (userInfo == null) {
+        UserDTO user = userService.selectUserByUsername(username);
+        if (user == null) {
             throw new UsernameNotFoundException("用户不存在");
         }
-
-        // 得到用户角色
-        String role = userInfo.getRole();
-
-        // 角色集合
-        List<GrantedAuthority> authorities = new ArrayList<>();
-        // 角色必须以`ROLE_`开头，数据库中没有，则在这里加
-        authorities.add(new SimpleGrantedAuthority("ROLE_" + role));
+        // 添加用户拥有的多个角色
+        List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+        Set<Role> roles = user.getRoles();
+        for (Role role : roles) {
+            grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_" + role.getRoleName()));
+        }
 
         return new org.springframework.security.core.userdetails.User(
-                userInfo.getUserName(),
-                userInfo.getPassword(),
-                authorities
+                user.getUserName(),
+                user.getPassword(),
+                grantedAuthorities
         );
     }
 }

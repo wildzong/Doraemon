@@ -1,6 +1,7 @@
 package com.doraemon.lottery.login.dao;
 
 import com.doraemon.lottery.login.entity.User;
+import com.doraemon.lottery.login.entity.dto.UserDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -8,6 +9,14 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Mapper
 public interface UserDao {
+
+    /**
+     * 查询用户信息及角色信息
+     * @param userName
+     * @return
+     */
+    UserDTO selectUserByUsername(@Param("userName") String userName);
+
     /**
      * 通过userName获取UserEntity
      * @param userName
