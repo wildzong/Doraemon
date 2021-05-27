@@ -5,19 +5,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 
-import java.io.Serializable;
+import javax.annotation.Resource;
 
 @SpringBootTest
 public class LettuceRedisConfigTest {
     @Autowired
-    private RedisTemplate<String, String> strRedisTemplate;
-    @Autowired
-    private RedisTemplate<String, Serializable> serializableRedisTemplate;
+    private RedisUtils redisUtils;
 
     @Test
     public void testString() {
-        strRedisTemplate.opsForValue().set("strKey", "zwqh");
-        System.out.println(strRedisTemplate.opsForValue().get("strKey"));
+        System.out.println(redisUtils.get("name"));
     }
 
 }

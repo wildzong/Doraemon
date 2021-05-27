@@ -42,6 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/addUser").permitAll()
+                .antMatchers("/redis").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 // 添加JWT登录拦截器

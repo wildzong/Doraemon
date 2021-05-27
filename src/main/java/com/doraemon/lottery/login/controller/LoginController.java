@@ -1,5 +1,6 @@
 package com.doraemon.lottery.login.controller;
 
+import com.doraemon.lottery.base.redis.RedisUtils;
 import com.doraemon.lottery.login.entity.User;
 import com.doraemon.lottery.login.entity.dto.UserDTO;
 import com.doraemon.lottery.login.service.UserService;
@@ -17,11 +18,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class LoginController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private RedisUtils redisUtils;
 
     @GetMapping("/user")
     @ResponseBody
     public UserDTO showUser() {
         return userService.selectUserByUsername("zong");
+    }
+
+    @GetMapping("/redis")
+    @ResponseBody
+    public String redis() {
+        System.out.println((String) redisUtils.get("name"));
+        return (String) redisUtils.get("name");
     }
 
     @PostMapping("/addUser")
