@@ -2,10 +2,8 @@ package com.doraemon.lottery.login.entity;
 
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
-public class User implements Serializable {
+public class User {
 
     // 用户id
     private Long id;
