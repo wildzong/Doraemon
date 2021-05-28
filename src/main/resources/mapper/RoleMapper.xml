@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.doraemon.lottery.login.dao.RoleDao">
+<mapper namespace="com.doraemon.microservice.login.dao.RoleDao">
 
-    <resultMap id="role_entityResultMap" type="com.doraemon.lottery.login.entity.Role" >
+    <resultMap id="role_entityResultMap" type="com.doraemon.microservice.login.entity.Role" >
         <id column="id" property="id" />
         <result column="role_name" property="roleName" />
     </resultMap>

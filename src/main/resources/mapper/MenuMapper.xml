@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.doraemon.lottery.login.dao.MenuDao">
+<mapper namespace="com.doraemon.microservice.login.dao.MenuDao">
 
-    <resultMap id="menu_entityResultMap" type="com.doraemon.lottery.login.entity.Menu">
+    <resultMap id="menu_entityResultMap" type="com.doraemon.microservice.login.entity.Menu">
         <id column="id" property="id" />
         <result column="menu_name" property="menuName" />
         <result column="menu_url" property="menuUrl" />
