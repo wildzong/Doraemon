@@ -27,13 +27,6 @@ public class LoginController {
         return userService.selectUserByUsername("zong");
     }
 
-    @GetMapping("/redis")
-    @ResponseBody
-    public String redis() {
-        System.out.println((String) redisUtils.get("name"));
-        return (String) redisUtils.get("name");
-    }
-
     @PostMapping("/addUser")
     @ResponseBody
     @Transactional(rollbackFor = Exception.class)
