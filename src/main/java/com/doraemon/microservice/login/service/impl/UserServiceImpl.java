@@ -68,5 +68,6 @@ public class UserServiceImpl implements UserService {
             return userDao.updatePwd(username, passwordEncoder.encode(newPwd));
         }
         return 0;
-    };
+    }
+
 }
