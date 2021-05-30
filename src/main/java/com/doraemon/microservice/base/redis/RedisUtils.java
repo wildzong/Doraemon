@@ -290,8 +290,9 @@ public final class RedisUtils {
         return redisTemplate.opsForHash().increment(key, entry, delta);
     }
 
-    // todo list和set相关工具类待补充
+    // todo list\set\zset相关工具类待补充
     // ############### List Util ###################
     // ############### Set Util ###################
+    // ############### ZSet Util ###################
 
 }
