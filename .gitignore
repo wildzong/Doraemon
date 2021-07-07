@@ -1,4 +1,4 @@
-HELP.md
+  HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
@@ -34,3 +34,9 @@ build/
 
 ### 日志文件 ###
 /logs/
+/.mvn/wrapper/maven-wrapper.jar
+/.mvn/wrapper/maven-wrapper.properties
+/.mvn/wrapper/MavenWrapperDownloader.java
+/firestorm.log
+/mvnw
+/mvnw.cmd
