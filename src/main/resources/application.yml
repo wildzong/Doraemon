@@ -71,6 +71,14 @@ spring:
         # 连接池中的最小空闲连接 默认 0
         min-idle: 0
 
+  ################ Rabbitmq 配置 ##############
+  rabbitmq:
+    username: wildzong
+    password: lsz123456
+    virtual-host: /
+    host: wildzong.top
+    port: 5672
+
 # log4j2 相关配置文件
 logging:
   config: classpath:log4j2.xml
